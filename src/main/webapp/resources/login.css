@@ -1,0 +1,9 @@
+#login_block {width: 300px; margin-right: auto; margin-left: auto;}
+.title_bar {float: left; width: 100%; text-align: center; font-size: 20px;}
+.login_form {float: left; width: 100%;}
+.input_block {float: left; width: 100%; margin-bottom: 10px;}
+.text_block {float: left; width: 90px; font-size: 15px; padding-left: 10px;}
+.text_filed {float: left; width: 200px;}
+input[type="text"], input[type="password"] {float: left; width: 196px;}
+.btn_block {float: left; width: 100%; text-align: center;}
+.btn {width: 80px;}

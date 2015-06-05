@@ -1,0 +1,9 @@
+.col_1 {float: left; width: 15%}
+.col_2 {float: left; width: 40%}
+.col_3 {float: left; width: 10%}
+.col_4 {float: left; width: 25%}
+.col_5 {float: left; width: 10%}
+.col_5 button {width: 100%;}
+.list_body {height: auto;}
+.list_footer {margin-top: 50px;}
+.total_price {margin-left: 50px;}
