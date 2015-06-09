@@ -15,8 +15,8 @@
 <body>
 	<div id="wrap">
 		<div id="top">
-			<button class="btn_signUp" onclick="location.href='signUp.jeju'">회원가입</button>
-			<button class="btn_login" onclick="location.href='login.jeju'">로그인</button>
+			<button class="btn_signUp" onclick="location.href='signUp.jsp'">회원가입</button>
+			<button class="btn_login" onclick="location.href='login.jsp'">로그인</button>
 		</div>
 
 		<div id="list_border">
@@ -28,100 +28,14 @@
 			</div>
 
 			<div class="list_body">
-				<c:forEach var="product" items="${myList}" varStatus="status">					
+				<c:forEach var="product" items="${productList}" varStatus="status">
 					<div class="list_row">
-						<li class="col_1"><img src="${product.productImg}" /></li>
-						<li class="col_2 alignLeft"><a href="#">${product.productName}</a></li>
-						<li class="col_3">${product.productPrice}</li>
+						<li class="col_1"><img src="${product.imgUrl}" /></li>
+						<li class="col_2 alignLeft"><a href="">${product.title}</a></li>
+						<li class="col_3">${product.price}</li>
 						<li class="col_4">${product.seller}</li>
 					</div>
 				</c:forEach>
-
-
-				<!--<div class="list_row">
-					<li class="col_1"><img src="#" /></li>
-					<li class="col_2 alignLeft"><a href="./deals_worth.jeju">품질
-							좋은 상품 A 20% 할인판매</a></li>
-					<li class="col_3">15,000</li>
-					<li class="col_4">(주)제주대학교</li>
-				</div>
-				<div class="list_row">
-					<li class="col_1"><img src="#" /></li>
-					<li class="col_2 alignLeft"><a href="#">품질 좋은 상품 A 20%
-							할인판매</a></li>
-					<li class="col_3">15,000</li>
-					<li class="col_4">(주)제주대학교</li>
-				</div>
-				<div class="list_row">
-					<li class="col_1"><img src="#" /></li>
-					<li class="col_2 alignLeft"><a href="#">품질 좋은 상품 A 20%
-							할인판매</a></li>
-					<li class="col_3">15,000</li>
-					<li class="col_4">(주)제주대학교</li>
-				</div>
-				<div class="list_row">
-					<li class="col_1"><img src="#" /></li>
-					<li class="col_2 alignLeft"><a href="#">품질 좋은 상품 A 20%
-							할인판매</a></li>
-					<li class="col_3">15,000</li>
-					<li class="col_4">(주)제주대학교</li>
-				</div>
-				<div class="list_row">
-					<li class="col_1"><img src="#" /></li>
-					<li class="col_2 alignLeft"><a href="#">품질 좋은 상품 A 20%
-							할인판매</a></li>
-					<li class="col_3">15,000</li>
-					<li class="col_4">(주)제주대학교</li>
-				</div>
-				<div class="list_row">
-					<li class="col_1"><img src="#" /></li>
-					<li class="col_2 alignLeft"><a href="#">품질 좋은 상품 A 20%
-							할인판매</a></li>
-					<li class="col_3">15,000</li>
-					<li class="col_4">(주)제주대학교</li>
-				</div>
-				<div class="list_row">
-					<li class="col_1"><img src="#" /></li>
-					<li class="col_2 alignLeft"><a href="#">품질 좋은 상품 A 20%
-							할인판매</a></li>
-					<li class="col_3">15,000</li>
-					<li class="col_4">(주)제주대학교</li>
-				</div>
-				<div class="list_row">
-					<li class="col_1"><img src="#" /></li>
-					<li class="col_2 alignLeft"><a href="#">품질 좋은 상품 A 20%
-							할인판매</a></li>
-					<li class="col_3">15,000</li>
-					<li class="col_4">(주)제주대학교</li>
-				</div>
-				<div class="list_row">
-					<li class="col_1"><img src="#" /></li>
-					<li class="col_2 alignLeft"><a href="#">품질 좋은 상품 A 20%
-							할인판매</a></li>
-					<li class="col_3">15,000</li>
-					<li class="col_4">(주)제주대학교</li>
-				</div>
-				<div class="list_row">
-					<li class="col_1"><img src="#" /></li>
-					<li class="col_2 alignLeft"><a href="#">품질 좋은 상품 A 20%
-							할인판매</a></li>
-					<li class="col_3">15,000</li>
-					<li class="col_4">(주)제주대학교</li>
-				</div>
-				<div class="list_row">
-					<li class="col_1"><img src="#" /></li>
-					<li class="col_2 alignLeft"><a href="#">품질 좋은 상품 A 20%
-							할인판매</a></li>
-					<li class="col_3">15,000</li>
-					<li class="col_4">(주)제주대학교</li>
-				</div>
-				<div class="list_row">
-					<li class="col_1"><img src="#" /></li>
-					<li class="col_2 alignLeft"><a href="#">품질 좋은 상품 A 20%
-							할인판매</a></li>
-					<li class="col_3">15,000</li>
-					<li class="col_4">(주)제주대학교</li>
-				</div> -->
 			</div>
 
 			<div class="list_footer">
