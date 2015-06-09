@@ -31,7 +31,7 @@
 				<ul class="btn_block">
 					<input type="submit" id="btn_submit" class="btn" value="로그인" />
 					<input type="button" class="btn" value="취소"
-						onclick="location.href='./index.html'" />
+						onclick="location.href='./'" />
 				</ul>
 			</form>
 		</div>

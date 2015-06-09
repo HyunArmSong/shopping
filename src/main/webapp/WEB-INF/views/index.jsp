@@ -15,8 +15,8 @@
 <body>
 	<div id="wrap">
 		<div id="top">
-			<button class="btn_signUp" onclick="location.href='signUp.jsp'">회원가입</button>
-			<button class="btn_login" onclick="location.href='login.jsp'">로그인</button>
+			<button class="btn_signUp" onclick="location.href='./signUp'">회원가입</button>
+			<button class="btn_login" onclick="location.href='./login'">로그인</button>
 		</div>
 
 		<div id="list_border">
@@ -26,8 +26,8 @@
 				<li class="col_3">가격</li>
 				<li class="col_4">판매자</li>
 			</div>
-
-			<div class="list_body">
+			
+			<div class="list_body now_list">
 				<c:forEach var="product" items="${productList}" varStatus="status">
 					<div class="list_row">
 						<li class="col_1"><img src="${product.imgUrl}" /></li>
