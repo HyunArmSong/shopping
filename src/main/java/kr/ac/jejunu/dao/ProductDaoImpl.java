@@ -40,4 +40,10 @@ public class ProductDaoImpl implements ProductDao {
 		sqlSession.update("updateProduct", product);
 	}
 
+	@Override
+	public void deleteProduct(int boardNum) {
+		// TODO Auto-generated method stub
+		sqlSession.delete("deleteProduct", boardNum);
+	}
+
 }

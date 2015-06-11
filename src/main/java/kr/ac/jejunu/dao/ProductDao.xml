@@ -24,4 +24,8 @@
 		set title="${title}", price=${price}, content="${content}", imgUrl="${imgUrl}" 
 		where boardNum=${boardNum}
 	</update>
+	
+	<delete id="deleteProduct" parameterType="int">
+		delete from board where boardNum = #{boardNum}
+	</delete>
 </mapper>

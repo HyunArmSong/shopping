@@ -18,4 +18,6 @@ public interface ProductService {
 	int getBoarderNum();
 
 	void updateProduct(Product product);
+
+	void deleteProduct(int boardNum);
 }

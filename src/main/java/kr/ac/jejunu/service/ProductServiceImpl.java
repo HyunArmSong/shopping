@@ -42,4 +42,10 @@ public class ProductServiceImpl implements ProductService {
 		productDao.updateProduct(product);
 	}
 
+	@Override
+	public void deleteProduct(int boardNum) {
+		// TODO Auto-generated method stub
+		productDao.deleteProduct(boardNum);
+	}
+
 }

@@ -19,4 +19,6 @@ public interface ProductDao {
 
 	void updateProduct(Product product);
 
+	void deleteProduct(int boardNum);
+
 }

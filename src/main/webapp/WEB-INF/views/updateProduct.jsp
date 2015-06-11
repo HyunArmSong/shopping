@@ -54,7 +54,7 @@
 				<li class="btn_block">
 					<input type="submit" class="btn" value="등록" />
 					<input type="button" class="btn" value="취소" onclick="location.href='./'" />
-					<input type="button" class="btn" value="삭제" onclick=""/>
+					<input type="button" class="btn" value="삭제" onclick="btnDeleteOnclick();"/>
 				</li>
 			</form>
 
@@ -66,7 +66,9 @@
 	
 	<script type="text/javascript">
 		function btnDeleteOnclick(){
-			
+			if(confirm("삭제하시겠습니까?")==true){
+				location.href='./deleteProduct?boardNum=${productInfo.boardNum}';
+			}
 		}
 	</script>
 </body>
