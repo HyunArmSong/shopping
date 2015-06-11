@@ -17,4 +17,6 @@ public interface ProductDao {
 
 	int findMaxBoardNum();
 
+	void updateProduct(Product product);
+
 }

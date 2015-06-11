@@ -36,4 +36,10 @@ public class ProductServiceImpl implements ProductService {
 		return productDao.findMaxBoardNum() + 1;
 	}
 
+	@Override
+	public void updateProduct(Product product) {
+		// TODO Auto-generated method stub
+		productDao.updateProduct(product);
+	}
+
 }

@@ -18,4 +18,10 @@
 	<insert id="insertProduct" parameterType="Product">
 		insert into board(boardNum, title, price, seller, content, imgUrl) values(${boardNum}, "${title}", ${price}, "${seller}", "${content}", "${imgUrl}")
 	</insert>
+	
+	<update id="updateProduct" parameterType="Product">
+		update board 
+		set title="${title}", price=${price}, content="${content}", imgUrl="${imgUrl}" 
+		where boardNum=${boardNum}
+	</update>
 </mapper>

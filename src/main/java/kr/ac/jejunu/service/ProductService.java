@@ -16,4 +16,6 @@ public interface ProductService {
 	void insertProduct(Product product);
 
 	int getBoarderNum();
+
+	void updateProduct(Product product);
 }

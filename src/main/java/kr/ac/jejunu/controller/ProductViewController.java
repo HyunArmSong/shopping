@@ -23,7 +23,6 @@ import org.springframework.web.servlet.ModelAndView;
 public class ProductViewController {
 	@Autowired
 	private ProductService productService;
-	private UserService userService;
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView productView(@RequestParam(value = "boardNum", required=true, defaultValue = "0") int boardNum, HttpSession session){

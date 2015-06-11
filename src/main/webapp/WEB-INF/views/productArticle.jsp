@@ -23,7 +23,7 @@
 					<li class="btn_block">
 						<button class="btn" onclick="location.href='./'">목록</button>
 						<button id="btn_update" class="btn"
-							onclick="location.href='./updateProduct'">수정</button>
+							onclick="location.href='./updateProduct?boardNum=${productInfo.boardNum}'">수정</button>
 					</li>
 				</ul>
 
