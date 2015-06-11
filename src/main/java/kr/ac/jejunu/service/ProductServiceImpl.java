@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import kr.ac.jejunu.dao.ProductDao;
 import kr.ac.jejunu.model.Product;
+
 @Service
 public class ProductServiceImpl implements ProductService {
 	@Autowired
@@ -17,11 +18,22 @@ public class ProductServiceImpl implements ProductService {
 		return productDao.findAll();
 	}
 
-
 	@Override
 	public List<Product> boardView(Product product) {
 		// TODO Auto-generated method stub
-		return  productDao.findBoard(product);
+		return productDao.findBoard(product);
+	}
+
+	@Override
+	public void insertProduct(Product product) {
+		// TODO Auto-generated method stub
+		productDao.insertProduct(product);
+	}
+
+	@Override
+	public int getBoarderNum() {
+		// TODO Auto-generated method stub
+		return productDao.findMaxBoardNum() + 1;
 	}
 
 }

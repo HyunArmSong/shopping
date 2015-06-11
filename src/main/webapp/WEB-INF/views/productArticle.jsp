@@ -22,7 +22,8 @@
 					<li class="title">${productInfo.title}</li>
 					<li class="btn_block">
 						<button class="btn" onclick="location.href='./'">목록</button>
-						<button class="btn" onclick="location.href='./updateProduct'">수정</button>
+						<button id="btn_update" class="btn"
+							onclick="location.href='./updateProduct'">수정</button>
 					</li>
 				</ul>
 
@@ -44,5 +45,23 @@
 			</div>
 		</div>
 	</div>
+
+	<script type="text/javascript">
+		var btn_update = document.getElementById("btn_update");
+		var btn_purchase = document.getElementById("btn_purchase");
+
+		if("${seller}" == "${productInfo.seller}"){
+			btn_update.style.display = "";
+			btn_purchase.style.display = "none";
+		}else{
+			userDisplay();
+		}
+		
+		function userDisplay(){
+			btn_update.style.display = "none";
+			btn_purchase.style.display = "";
+		}
+	${userDisplay}
+	</script>
 </body>
 </html>

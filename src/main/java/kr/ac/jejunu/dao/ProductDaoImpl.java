@@ -23,4 +23,15 @@ public class ProductDaoImpl implements ProductDao {
 		return sqlSession.selectList("findBoard", product);
 	}
 
+	@Override
+	public void insertProduct(Product product) {
+		// TODO Auto-generated method stub
+		sqlSession.insert("insertProduct", product);
+	}
+
+	@Override
+	public int findMaxBoardNum() {
+		return sqlSession.selectOne("findMaxBoardNum");
+	}
+
 }

@@ -29,14 +29,14 @@ public class HomeController {
 	public ModelAndView home(Locale locale, Model model, HttpSession session) {
 
 		ModelAndView modelAndView = new ModelAndView();
+		User user = (User) session.getAttribute("user");
 
 		// List<Product> list = new ArrayList<Product>();
 		// list.add(new Product("#", "품질 좋은 상품 A 20% 할인판매", "15,000", "(주)제주대학교"));
 		List<User> loginUser = new ArrayList<User>();
 		List<String> startScript = new ArrayList<String>();
 
-		if ((User) session.getAttribute("user") != null) {
-			User user = (User) session.getAttribute("user");
+		if (user != null) {
 			loginUser.add(user);
 			modelAndView.addObject("loginUser", loginUser.get(0));
 

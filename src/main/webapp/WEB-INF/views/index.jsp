@@ -23,7 +23,7 @@
 		<div id="login_top" style="display: none;">
 			<span id="userName">${loginUser.name}</span>님 안녕하세요.
 			<button class="btn_addProduct" id="btn_addProduct"
-				onclick="localtion='./deals_worth.jsp'" style="display:">상품등록</button>
+				onclick="location.href='./insertProduct'" style="display:">상품등록</button>
 			<button class="btn_logout" onclick="location.href='./logout'">로그아웃</button>
 
 		</div>

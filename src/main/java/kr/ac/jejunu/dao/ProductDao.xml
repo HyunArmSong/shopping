@@ -10,4 +10,12 @@
 	<select id="findBoard" resultType="Product">
 		select * from board where boardNum = #{boardNum}
 	</select>
+	
+	<select id="findMaxBoardNum" resultType="int">
+		select max(boardNum) from board
+	</select>
+	
+	<insert id="insertProduct" parameterType="Product">
+		insert into board(boardNum, title, price, seller, content, imgUrl) values(${boardNum}, "${title}", ${price}, "${seller}", "${content}", "${imgUrl}")
+	</insert>
 </mapper>

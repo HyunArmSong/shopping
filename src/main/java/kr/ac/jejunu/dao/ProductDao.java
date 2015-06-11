@@ -13,4 +13,8 @@ public interface ProductDao {
 
 	List<Product> findBoard(Product product);
 
+	void insertProduct(Product product);
+
+	int findMaxBoardNum();
+
 }

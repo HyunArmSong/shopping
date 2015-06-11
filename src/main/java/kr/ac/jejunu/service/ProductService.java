@@ -13,4 +13,7 @@ public interface ProductService {
 
 	List<Product> boardView(Product product);
 
+	void insertProduct(Product product);
+
+	int getBoarderNum();
 }
