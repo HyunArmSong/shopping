@@ -2,19 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.ac.jejunu.dao.UserDao">
-	<select id="findAll" resultType="User">
+	<!-- <select id="findAll" resultType="User">
 		select
 		id, name
 		from userinfo
 	</select>
-	<insert id="insert" parameterType="User">
-		insert into
-		userinfo(id,name,password) values(#{id}, #{name}, #{password})
-	</insert>
 	<delete id="delete">
 		delete from userinfo where id = #{id}
 	</delete>
-	<select id="findById" resultType="User">ff
+	<select id="findById" resultType="User">
 		select
 		id, name, password
 		from
@@ -24,5 +20,22 @@
 	<update id="update" parameterType="User">
 		update userinfo set
 		name=#{name}, password=#{password} where id = #{id}
-	</update>
+	</update> -->
+	
+	<select id="findAll" resultType="User">
+		select password from users where userId = #{id}
+	</select>
+	
+	<insert id="insert" parameterType="User">
+		insert into
+		users(userId, name, password, userType) values(#{id}, #{name}, #{password}, #{userType})
+	</insert>
+	
+	<select id="findById" resultType="int">
+		select count(*) from users where userId = #{id}
+	</select>
+	
+	<select id="loginFindUser" resultType="String">
+		select name from users where userId = #{id} and password = #{password}
+	</select>
 </mapper>

@@ -16,33 +16,33 @@
 		<div id="signUp_block">
 			<div class="title_bar">회원가입</div>
 
-			<form class="signUp_form" action="#">
+			<form class="signUp_form" action="signUp" method="post">
 				<ul class="input_block">
 					<li>
 						<dd class="text_block">ID</dd>
 						<dd class="text_filed">
-							<input type="text" name="" id="" />
+							<input type="text" name="id" id="id" />
 						</dd>
 					</li>
 
 					<li>
 						<dd class="text_block">Password</dd>
 						<dd class="text_filed">
-							<input type="text" name="" id="" />
+							<input type="password" name="password" id="password" />
 						</dd>
 					</li>
 
 					<li>
 						<dd class="text_block">이름</dd>
 						<dd class="text_filed">
-							<input type="text" name="" id="" />
+							<input type="text" name="name" id="name" />
 						</dd>
 					</li>
 
 					<li>
 						<dd class="text_block">권한</dd>
 						<dd class="text_filed">
-							<select name="" class="selectBox">
+							<select name="userType" id="userType" class="selectBox">
 								<option>판매자</option>
 								<option>사용자</option>
 							</select>
@@ -52,8 +52,7 @@
 
 				<ul class="btn_block">
 					<input type="submit" value="회원가입" class="btn" />
-					<input type="button" value="취소" class="btn"
-						onclick="location='./index.html'" />
+					<input type="button" value="취소" class="btn" onclick="location='/'" />
 				</ul>
 			</form>
 		</div>

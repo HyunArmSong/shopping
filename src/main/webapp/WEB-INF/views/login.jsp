@@ -15,17 +15,17 @@
 	<div id="wrap">
 		<div id="login_block">
 			<div class="title_bar">로 그 인</div>
-			<form class="login_form" action="#">
+			<form class="login_form" action="login" method="post">
 				<ul class="input_block">
 					<li class="text_block">ID</li>
-					<li class="text_filed"><input type="text" name="user_id"
-						id="user_id" /></li>
+					<li class="text_filed"><input type="text" name="id"
+						id="id" /></li>
 				</ul>
 
 				<ul class="input_block">
 					<li class="text_block">Password</li>
-					<li class="text_filed"><input type="password" name="user_pw"
-						id="user_pw" /></li>
+					<li class="text_filed"><input type="password" name="password"
+						id="password" /></li>
 				</ul>
 
 				<ul class="btn_block">
