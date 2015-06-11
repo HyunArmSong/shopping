@@ -20,7 +20,7 @@
 			<form class="login_form" action="login" method="post">
 				<ul class="input_block">
 					<li class="text_block">ID</li>
-					<li class="text_filed"><input type="text" name="id" id="id" /></li>
+					<li class="text_filed"><input type="text" name="userId" id="id" /></li>
 				</ul>
 
 				<ul class="input_block">
@@ -41,7 +41,7 @@
 		function startAlert() {
 			alert('ID 혹은 Password가 틀렸습니다.');
 		}
+		${notFindUser}
 	</script>
-	${notFindUser}
 </body>
 </html>

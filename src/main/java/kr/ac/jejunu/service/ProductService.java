@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import kr.ac.jejunu.model.Product;
+import kr.ac.jejunu.model.WishList;
 
 
 public interface ProductService {
@@ -20,4 +21,8 @@ public interface ProductService {
 	void updateProduct(Product product);
 
 	void deleteProduct(int boardNum);
+
+	void insertWishList(WishList wishList);
+
+	List<Product> wishList(String userId);
 }

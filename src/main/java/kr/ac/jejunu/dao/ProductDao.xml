@@ -16,16 +16,30 @@
 	</select>
 	
 	<insert id="insertProduct" parameterType="Product">
-		insert into board(boardNum, title, price, seller, content, imgUrl) values(${boardNum}, "${title}", ${price}, "${seller}", "${content}", "${imgUrl}")
+		insert into board(boardNum, title, price, seller, content, imgUrl)
+		values(#{boardNum}, #{title}, #{price}, #{seller}, #{content}, #{imgUrl})
 	</insert>
 	
 	<update id="updateProduct" parameterType="Product">
 		update board 
-		set title="${title}", price=${price}, content="${content}", imgUrl="${imgUrl}" 
+		set title=#{title}, price=#{price}, content=#{content}, imgUrl=#{imgUrl} 
 		where boardNum=${boardNum}
 	</update>
 	
 	<delete id="deleteProduct" parameterType="int">
 		delete from board where boardNum = #{boardNum}
 	</delete>
+	
+	
+	
+	<insert id="insertWishList" parameterType="WishList">
+		insert into wishlist(userId, boardNum)
+		values(#{userId}, #{boardNum})
+	</insert>
+	
+	<select id="findWishList" resultType="Product">
+		select b.boardNum, title, price, seller, content, imgUrl
+		from wishlist w, board b
+		where w.boardNum = b.boardNum and w.userId = #{userId}
+	</select>
 </mapper>

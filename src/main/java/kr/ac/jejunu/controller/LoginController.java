@@ -39,7 +39,7 @@ public class LoginController {
 			httpSession.setAttribute("user", loginUser);
 			modelAndView.setViewName("redirect:/");
 		} else {
-			startScript.add("<script>startAlert();</script>");
+			startScript.add("startAlert();");
 			modelAndView.addObject("notFindUser", startScript.get(0));
 		}
 

@@ -1,29 +1,28 @@
 package kr.ac.jejunu.controller;
 
-import java.util.Locale;
+import javax.servlet.http.HttpSession;
+
+import kr.ac.jejunu.model.User;
+import kr.ac.jejunu.service.ProductService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import kr.ac.jejunu.service.ProductService;
-
 @Controller
-public class LoghinHomController {
+@RequestMapping("wishList")
+public class WishListController {
 	@Autowired
 	private ProductService productService;
-
-	@RequestMapping(value = "/loginIndex", method = RequestMethod.GET)
-	public ModelAndView home(Locale locale, Model model) {
+	
+	@RequestMapping(method = RequestMethod.GET)
+	public ModelAndView wishList(HttpSession session){
 		ModelAndView modelAndView = new ModelAndView();
-
-		modelAndView.addObject("productList", productService.list());
-		modelAndView.setViewName("index_login");
-
+		User user = (User) session.getAttribute("user");
+		
+		modelAndView.addObject("wishList", productService.wishList(user.getUserId()));
 		return modelAndView;
 	}
-
 }

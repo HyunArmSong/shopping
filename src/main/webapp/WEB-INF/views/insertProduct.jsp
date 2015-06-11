@@ -46,7 +46,7 @@
 				<li class="border_row">
 					<dd class="text_block">상품상세설명</dd>
 					<dd class="input_block">
-						<textarea name="content" wrap="hard"></textarea>
+						<textarea name="text" wrap="hard"></textarea>
 					</dd>
 				</li>
 

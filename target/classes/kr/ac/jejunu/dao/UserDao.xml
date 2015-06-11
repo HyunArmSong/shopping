@@ -23,19 +23,19 @@
 	</update> -->
 	
 	<select id="findAll" resultType="User">
-		select password from users where userId = #{id}
+		select password from users where userId = #{userId}
 	</select>
 	
 	<insert id="insert" parameterType="User">
 		insert into
-		users(userId, name, password, userType) values(#{id}, #{name}, #{password}, #{userType})
+		users(userId, name, password, userType) values(#{userId}, #{name}, #{password}, #{userType})
 	</insert>
 	
 	<select id="signUpFindById" resultType="int">
-		select count(*) from users where userId = #{id}
+		select count(*) from users where userId = #{userId}
 	</select>
 	
 	<select id="loginFindUser" resultType="User">
-		select * from users where userId = #{id} and password = #{password}
+		select userId, name, password, userType from users where userId = #{userId} and password = #{password}
 	</select>
 </mapper>

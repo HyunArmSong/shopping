@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import kr.ac.jejunu.dao.ProductDao;
 import kr.ac.jejunu.model.Product;
+import kr.ac.jejunu.model.WishList;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -46,6 +47,18 @@ public class ProductServiceImpl implements ProductService {
 	public void deleteProduct(int boardNum) {
 		// TODO Auto-generated method stub
 		productDao.deleteProduct(boardNum);
+	}
+
+	@Override
+	public void insertWishList(WishList wishList) {
+		// TODO Auto-generated method stub
+		productDao.insertWishList(wishList);
+	}
+
+	@Override
+	public List<Product> wishList(String userId) {
+		// TODO Auto-generated method stub
+		return productDao.findWishList(userId);
 	}
 
 }

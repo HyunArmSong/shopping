@@ -33,8 +33,9 @@
 						<li class="in_info">가격 : <span class="price">${productInfo.price}</span>원
 						</li>
 						<li class="in_info">판매자 : <span class="seller_name">${productInfo.seller}</span></li>
-						<li class="purchase_block"><button class="btn_purchase"
-								id="btn_purchase" onclick="location='./shopping_cart.html'">구매</button></li>
+						<li class="purchase_block">
+						<button class="btn_purchase"
+								id="btn_purchase" onclick="location.href='./addWishList?boardNum=${productInfo.boardNum}'">구매</button></li>
 					</ul>
 				</ul>
 			</div>

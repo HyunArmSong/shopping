@@ -3,6 +3,7 @@ package kr.ac.jejunu.dao;
 import java.util.List;
 
 import kr.ac.jejunu.model.Product;
+import kr.ac.jejunu.model.WishList;
 
 import org.springframework.stereotype.Repository;
 
@@ -20,5 +21,9 @@ public interface ProductDao {
 	void updateProduct(Product product);
 
 	void deleteProduct(int boardNum);
+
+	void insertWishList(WishList wishList);
+
+	List<Product> findWishList(String userId);
 
 }

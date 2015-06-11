@@ -3,6 +3,7 @@ package kr.ac.jejunu.dao;
 import java.util.List;
 
 import kr.ac.jejunu.model.Product;
+import kr.ac.jejunu.model.WishList;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +45,18 @@ public class ProductDaoImpl implements ProductDao {
 	public void deleteProduct(int boardNum) {
 		// TODO Auto-generated method stub
 		sqlSession.delete("deleteProduct", boardNum);
+	}
+
+	@Override
+	public void insertWishList(WishList wishList) {
+		// TODO Auto-generated method stub
+		sqlSession.insert("insertWishList", wishList);
+	}
+
+	@Override
+	public List<Product> findWishList(String userId) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("findWishList", userId);
 	}
 
 }
