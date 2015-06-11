@@ -11,4 +11,6 @@ public interface ProductDao {
 
 	List<Product> findAll();
 
+	List<Product> findBoard(Product product);
+
 }

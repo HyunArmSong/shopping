@@ -31,11 +31,11 @@
 		users(userId, name, password, userType) values(#{id}, #{name}, #{password}, #{userType})
 	</insert>
 	
-	<select id="findById" resultType="int">
+	<select id="signUpFindById" resultType="int">
 		select count(*) from users where userId = #{id}
 	</select>
 	
-	<select id="loginFindUser" resultType="String">
-		select name from users where userId = #{id} and password = #{password}
+	<select id="loginFindUser" resultType="User">
+		select * from users where userId = #{id} and password = #{password}
 	</select>
 </mapper>

@@ -14,7 +14,13 @@ public class ProductDaoImpl implements ProductDao {
 
 	@Override
 	public List<Product> findAll() {
-		return sqlSession.<Product> selectList("findAll");
+		return sqlSession.selectList("findAll");
+	}
+
+	@Override
+	public List<Product> findBoard(Product product) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("findBoard", product);
 	}
 
 }

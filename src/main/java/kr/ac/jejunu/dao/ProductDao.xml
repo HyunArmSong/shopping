@@ -7,9 +7,7 @@
 		from board
 	</select>
 	
-	<!-- <select id="findAll" parameterType="Product">
-		select *
-		from board
-		where boardNum = #{boardNum}
-	</select> -->
+	<select id="findBoard" resultType="Product">
+		select * from board where boardNum = #{boardNum}
+	</select>
 </mapper>

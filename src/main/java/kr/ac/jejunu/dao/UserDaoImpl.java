@@ -32,7 +32,7 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public String loginFindUser(User user) {
+	public User loginFindUser(User user) {
 		return sqlSession.selectOne("loginFindUser", user);
 	}
 }

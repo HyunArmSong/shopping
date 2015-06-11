@@ -12,5 +12,5 @@ public interface UserService {
 
 	int signUpFindId(User user);
 
-	String login(User user);
+	User login(User user);
 }

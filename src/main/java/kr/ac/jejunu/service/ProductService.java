@@ -11,4 +11,6 @@ public interface ProductService {
 
 	List<Product> list();
 
+	List<Product> boardView(Product product);
+
 }

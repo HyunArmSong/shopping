@@ -15,6 +15,6 @@ public interface UserDao {
 
 	int signUpFindById(User user);
 
-	String loginFindUser(User user);
+	User loginFindUser(User user);
 
 }

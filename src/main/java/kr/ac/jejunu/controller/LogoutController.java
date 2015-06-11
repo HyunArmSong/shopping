@@ -1,5 +1,11 @@
 package kr.ac.jejunu.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import kr.ac.jejunu.model.User;
 import kr.ac.jejunu.service.UserService;
 
@@ -11,28 +17,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping(value = "/signUp")
-public class SignUpController {
-	@Autowired
-	private UserService userService;
+@RequestMapping(value = "/logout")
+public class LogoutController {
 
 	@RequestMapping(method = RequestMethod.GET)
-	public ModelAndView signUp() {
+	public ModelAndView login(HttpSession session) {
 		ModelAndView modelAndView = new ModelAndView();
-
-		modelAndView.setViewName("signUp");
-		return modelAndView;
-	}
-
-	@RequestMapping(method = RequestMethod.POST)
-	public ModelAndView submitSignUp(@ModelAttribute User user) {
-		ModelAndView modelAndView = new ModelAndView();
-		if (userService.signUpFindId(user) > 0) {
-
-		} else {
-			userService.insertUser(user);
-			modelAndView.setViewName("redirect:login");
-		}
+		
+		session.setAttribute("user", null);
+		modelAndView.setViewName("redirect:/");
 		return modelAndView;
 	}
 }

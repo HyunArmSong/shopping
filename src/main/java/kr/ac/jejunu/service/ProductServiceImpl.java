@@ -17,4 +17,11 @@ public class ProductServiceImpl implements ProductService {
 		return productDao.findAll();
 	}
 
+
+	@Override
+	public List<Product> boardView(Product product) {
+		// TODO Auto-generated method stub
+		return  productDao.findBoard(product);
+	}
+
 }

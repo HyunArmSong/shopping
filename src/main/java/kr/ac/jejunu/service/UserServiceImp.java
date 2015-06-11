@@ -20,7 +20,6 @@ public class UserServiceImp implements UserService {
 
 	@Override
 	public void insertUser(User user) {
-		// TODO Auto-generated method stub
 		userDao.insert(user);
 	}
 
@@ -30,7 +29,7 @@ public class UserServiceImp implements UserService {
 	}
 
 	@Override
-	public String login(User user) {
+	public User login(User user) {
 		return userDao.loginFindUser(user);
 	}
 }
