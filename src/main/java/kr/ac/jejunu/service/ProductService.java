@@ -25,4 +25,9 @@ public interface ProductService {
 	void insertWishList(WishList wishList);
 
 	List<Product> wishList(String userId);
+
+	void deleteWishList(WishList wishList);
+
+	int findDuplicateWishList(WishList wishList);
+
 }

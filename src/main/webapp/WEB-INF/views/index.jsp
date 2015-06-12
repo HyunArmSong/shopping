@@ -22,7 +22,8 @@
 
 		<div id="login_top" style="display: none;">
 			<span id="userName">${loginUser.name}</span>님 안녕하세요.
-			<button class="btn_wishList" id="btn_wishList" onclick="location.href='./wishList'">장바구니</button>
+			<button class="btn_wishList" id="btn_wishList"
+				onclick="location.href='./wishList'">장바구니</button>
 			<button class="btn_addProduct" id="btn_addProduct"
 				onclick="location.href='./insertProduct'" style="display:">상품등록</button>
 			<button class="btn_logout" onclick="location.href='./logout'">로그아웃</button>
@@ -43,9 +44,10 @@
 				%>
 				<c:forEach var="product" items="${productList}" varStatus="status">
 					<%
-						if (i == 12) {
-								out.println("<div class='list_body hiddenPage'>");
-							}
+						if (i == 13) {
+							out.println("<div class='list_body hiddenPage'>");
+							i = 1;
+						}
 					%>
 					<div class="list_row">
 						<li class="col_1"><img src="${product.imgUrl}" /></li>
@@ -55,11 +57,10 @@
 						<li class="col_4">${product.seller}</li>
 					</div>
 					<%
-						if (i == 24) {
-								out.println("</div>");
-								i = 1;
-							}
-							i++;
+						if (i == 12) {
+							out.println("</div>");
+						}
+						i++;
 					%>
 				</c:forEach>
 			</div>
@@ -90,7 +91,7 @@
 			indexTop.style.display = "";
 			loginTop.style.display = "none";
 		}
-	</script>
 	${loginDisplay}
+	</script>
 </body>
 </html>

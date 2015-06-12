@@ -61,4 +61,16 @@ public class ProductServiceImpl implements ProductService {
 		return productDao.findWishList(userId);
 	}
 
+	@Override
+	public void deleteWishList(WishList wishList) {
+		// TODO Auto-generated method stub
+		productDao.deleteWishList(wishList);
+	}
+
+	@Override
+	public int findDuplicateWishList(WishList wishList) {
+		// TODO Auto-generated method stub
+		return productDao.findDuplicateWishList(wishList);
+	}
+
 }

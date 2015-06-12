@@ -40,10 +40,10 @@ public class HomeController {
 			loginUser.add(user);
 			modelAndView.addObject("loginUser", loginUser.get(0));
 
-			startScript.add("<script>loginDisplay();</script>");
+			startScript.add("loginDisplay();");
 			modelAndView.addObject("loginDisplay", startScript.get(0));
 		}else{
-			startScript.add("<script>logoutDisplay();</script>");
+			startScript.add("logoutDisplay();");
 			modelAndView.addObject("logoutDisplay", startScript.get(0));
 		}
 

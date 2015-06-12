@@ -62,7 +62,13 @@
 			btn_update.style.display = "none";
 			btn_purchase.style.display = "";
 		}
-	${userDisplay}
+		function notUserDisplay(){
+			btn_update.style.display = "none";
+			btn_purchase.style.display = "none";
+		}
+		
+		${userDisplay}
+		${alert}
 	</script>
 </body>
 </html>

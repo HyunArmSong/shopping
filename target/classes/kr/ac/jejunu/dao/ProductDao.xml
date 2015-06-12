@@ -42,4 +42,12 @@
 		from wishlist w, board b
 		where w.boardNum = b.boardNum and w.userId = #{userId}
 	</select>
+	
+	<delete id="deleteWishList" parameterType="WishList">
+		delete from wishlist where userId=#{userId} and boardNum=#{boardNum}
+	</delete>
+	
+	<select id="findDuplicateWishList" resultType="int">
+		select count(*) from wishlist where userId=#{userId} and boardNum=#{boardNum}
+	</select>
 </mapper>

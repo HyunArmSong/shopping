@@ -25,17 +25,34 @@ public class ProductViewController {
 	private ProductService productService;
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public ModelAndView productView(@RequestParam(value = "boardNum", required=true, defaultValue = "0") int boardNum, HttpSession session){
+	public ModelAndView productView(@RequestParam(value = "boardNum", required=true, defaultValue = "0") int boardNum,
+			@RequestParam(value = "alert", required=true, defaultValue = "0") int alert,
+			HttpSession session){
 		ModelAndView modelAndView = new ModelAndView();
 		Product product = new Product();
 		User user = (User) session.getAttribute("user");
 		
+		System.out.println("looooooooooooooooooooooooooooooooog : "+user);
+		
 		if(user != null && user.getUserType().equals("판매자")){
 			modelAndView.addObject("seller", user.getName());
-		}else {
+			System.out.println("looooooooooooooooooooooooooooooooog : 11111111");
+		}else if(user != null){
 			List<String> script = new ArrayList<String>();
 			script.add("userDisplay();");
-			modelAndView.addObject("userDispaly", script.get(0));
+			modelAndView.addObject("userDisplay", script.get(0));
+			System.out.println("looooooooooooooooooooooooooooooooog : 2222222222");
+		}else {
+			List<String> script = new ArrayList<String>();
+			script.add("notUserDisplay();");
+			modelAndView.addObject("userDisplay", script.get(0));
+			System.out.println("looooooooooooooooooooooooooooooooog : 3333333333");
+		}
+		
+		if(alert == 1){
+			List<String> alertPlay = new ArrayList<String>();
+			alertPlay.add("alert('이미 같은상품이 장바구니에 있습니다.');");
+			modelAndView.addObject("alert", alertPlay.get(0));
 		}
 		
 		product.setBoardNum(boardNum);

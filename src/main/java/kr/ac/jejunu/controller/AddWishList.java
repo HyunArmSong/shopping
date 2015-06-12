@@ -2,7 +2,6 @@ package kr.ac.jejunu.controller;
 
 import javax.servlet.http.HttpSession;
 
-import kr.ac.jejunu.model.Product;
 import kr.ac.jejunu.model.User;
 import kr.ac.jejunu.model.WishList;
 import kr.ac.jejunu.service.ProductService;
@@ -28,10 +27,12 @@ public class AddWishList {
 		WishList wishList = new WishList();
 		wishList.setBoardNum(boardNum);
 		wishList.setUserId(user.getUserId());
-		
-		productService.insertWishList(wishList);
-		
-		modelAndView.setViewName("redirect:/wishList");
+		if (productService.findDuplicateWishList(wishList) > 0) {
+			modelAndView.setViewName("redirect:/productArticle?boardNum="+boardNum+"&alert=1");
+		} else {
+			productService.insertWishList(wishList);
+			modelAndView.setViewName("redirect:/wishList");
+		}
 		return modelAndView;
 	}
 

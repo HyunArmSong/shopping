@@ -26,4 +26,8 @@ public interface ProductDao {
 
 	List<Product> findWishList(String userId);
 
+	void deleteWishList(WishList wishList);
+
+	int findDuplicateWishList(WishList wishList);
+
 }

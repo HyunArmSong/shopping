@@ -59,4 +59,15 @@ public class ProductDaoImpl implements ProductDao {
 		return sqlSession.selectOne("findWishList", userId);
 	}
 
+	@Override
+	public void deleteWishList(WishList wishList) {
+		// TODO Auto-generated method stub
+		sqlSession.delete("deleteWishList", wishList);
+	}
+
+	@Override
+	public int findDuplicateWishList(WishList wishList) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("findDuplicateWishList", wishList);
+	}
 }
