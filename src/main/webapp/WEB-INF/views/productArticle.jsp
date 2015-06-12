@@ -34,8 +34,9 @@
 						</li>
 						<li class="in_info">판매자 : <span class="seller_name">${productInfo.seller}</span></li>
 						<li class="purchase_block">
-						<button class="btn_purchase"
-								id="btn_purchase" onclick="location.href='./addWishList?boardNum=${productInfo.boardNum}'">구매</button></li>
+							<button class="btn_purchase" id="btn_purchase"
+								onclick="location.href='./addWishList?boardNum=${productInfo.boardNum}'">구매</button>
+						</li>
 					</ul>
 				</ul>
 			</div>
@@ -63,9 +64,14 @@
 			btn_purchase.style.display = "";
 		}
 		function notUserDisplay(){
-			btn_update.style.display = "none";
-			btn_purchase.style.display = "none";
+			btn_purchase.onclick = function(){
+                if(confirm('로그인화면으로 이동하시겠습니까?')==true){
+                    location.href='./login';
+                }
+            }
 		}
+		
+			
 		
 		${userDisplay}
 		${alert}
